@@ -1,5 +1,5 @@
 import XCTest
-@testable import leecodeJSON
+@testable import leetcodeJSON
 
 final class leecodeJSONTests: XCTestCase {
     func testExample() {
