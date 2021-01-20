@@ -11,9 +11,9 @@
 import Foundation
 
 func piped() -> Data {
-    FileHandle.standardInput.availableData
+    FileHandle.standardInput.readDataToEndOfFile()
 }
-
-let model = try JSONDecoder().decode(LeetcodeModel.self, from: piped())
-
-print(model.categorySlug)
+let data = piped()
+let model = try JSONDecoder().decode(LeetcodeModel.self, from: data)
+var list = model.statStatusPairs.sorted()
+print(list.map(\.description).joined(separator: "\n"))
