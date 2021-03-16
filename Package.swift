@@ -20,7 +20,8 @@ let package = Package(
                 dependencies: []),
         .target(
             name: "leetcodeJSON",
-            dependencies: []),
+            dependencies: [],
+            resources: [.process("Resources")]),
         .testTarget(
             name: "leetcodeJSONTests",
             dependencies: ["leetcodeJSON"]),
